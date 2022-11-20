@@ -1,0 +1,31 @@
+POST http://localhost:8000/signup
+content-type: application/json
+
+{
+      "id": 201,
+      "password": "asdsddfsdf"
+}
+
+###
+
+POST http://localhost:8000/signin
+content-type: application/json
+
+{
+      "id": 201,
+      "password": "asdsddfsdf"
+}
+
+###
+
+POST http://localhost:8000/signin/new_token
+content-type: application/json
+
+{
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NDAzNzUsImV4cCI6MTY2OTgwNDM3NX0.txXAQ0dRieh8dpHVnoxfTL4uChHTZCOeOauYbWEralw"
+}
+
+### 
+GET http://localhost:8000/info 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NDgzMDcsImV4cCI6MTY2ODk0ODkwN30.Hm1HAxjbrFWQ_YJV_o1I50JPZ9KVjHleUEBjngASUUI
