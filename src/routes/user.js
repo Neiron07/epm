@@ -64,10 +64,13 @@ router.get('/info', hasAccess, async (req, res) => {
     }
 });
 
-router.get('/logout', async (req, res) => {
+router.get('/logout', hasAccess, async (req, res) => {
     try {
-        //const {id,}
-        const result = await Tournament.createTour(req);
+        const token = req.headers.authorization.split(' ')[1];
+        if (!token) {
+            return res.status(403).json({ msg: 'unauth user err' });
+        }
+        const result = await User.logout(token);
         res.status(201).json({ data: result });
     } catch (error) {
         console.log(error);

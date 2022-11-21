@@ -12,7 +12,7 @@ export async function jwtGenerator(id, password) {
 }
 
 export async function jwtRefreshToken(id, password) {
-    const refreshToken = await sign({ id: id, password: password }, process.env.refreshTokenSecret, { expiresIn: process.env.refreshTokenLife })
+    const refreshToken = await sign({ id: id, password: password }, process.env.refreshTokenSecret, { expiresIn: process.env.refreshTokenLife });
 
     return refreshToken;
 }

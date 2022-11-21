@@ -31,13 +31,19 @@ const Service = {
         }
 
         const new_token = await jwtGenerator(user.id, user.password);
-        await instance('users').where('refresh_token', refresh_token).first().update({'token': new_token});
-        return new_token;
+        await instance('users').where('refresh_token', refresh_token).first().update({ 'token': new_token });
+        return { 'token': new_token };
     },
-    getInfo: async (token)=>{
+    getInfo: async (token) => {
         const user = verify(token, process.env.SECRET_KEY);
 
-        return {'id':user.id};
+        return { 'id': user.id };
+    },
+    logout: async (token) => {
+        const user = verify(token, process.env.SECRET_KEY);
+        const new_token = await jwtGenerator(user.id, user.password);
+        await instance('users').where('user_id', user.id).first().update({ 'token': new_token });
+        return { 'token': new_token };
     }
 };
 

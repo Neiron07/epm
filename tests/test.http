@@ -28,4 +28,24 @@ content-type: application/json
 ### 
 GET http://localhost:8000/info 
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NDgzMDcsImV4cCI6MTY2ODk0ODkwN30.Hm1HAxjbrFWQ_YJV_o1I50JPZ9KVjHleUEBjngASUUI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NTYxMDcsImV4cCI6MTY2ODk1NjcwN30.v8lI7VMHRD7GwW6_fzViyj-TRMHjZr4KjSKF-RbR_Gg
+
+###
+GET http://localhost:8000/logout 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NTYxMDcsImV4cCI6MTY2ODk1NjcwN30.v8lI7VMHRD7GwW6_fzViyj-TRMHjZr4KjSKF-RbR_Gg
+
+###
+POST http://localhost:8000/file/upload 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2Njg5NTY5MjMsImV4cCI6MTY2ODk1NzUyM30.gPYbCuRxcMaLFYvaBMyUp_x9x3vGgxd96AOhleOoD7s
+
+###
+DELETE http://localhost:8000/file/delete/1 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2NjkwMzM2MjYsImV4cCI6MTY2OTAzNDIyNn0.emfhk9-t3GP6xof_0HZOnecD4wkEnO4zuVEWmb8Fbgk
+
+###
+GET http://localhost:8000/file/2 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAxLCJwYXNzd29yZCI6ImFzZHNkZGZzZGYiLCJpYXQiOjE2NjkwMzM2MjYsImV4cCI6MTY2OTAzNDIyNn0.emfhk9-t3GP6xof_0HZOnecD4wkEnO4zuVEWmb8Fbgk
