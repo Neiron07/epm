@@ -3,8 +3,8 @@ import config from '../../config/config.js';
 
 
 const instance = knex({
-    client: 'mysql',
-    connection: config.DB.pg
+  client: 'mysql',
+  connection: config.DB.pg
 });
 
 //await instance('users').insert({user_id:10, token: 'sdfsfsdfsdf', password: 'sdfsdfdsf'});

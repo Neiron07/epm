@@ -11,30 +11,30 @@ import instance from '../helper/knex.js';
   size: 13
 }*/
 const Service = {
-    uploadFile: async (file) => {
-        await instance('files').insert({ 'title': file.originalname, 'expansion': file.encoding, 'MIME_TYPE': file.mimetype, 'size': file.size });
-        return { 'msg': 'file is upload' };
-    },
-    deletedFile: async (id) => {
-        const file = await instance('files').select('id').where('id', id);
-        if (file.length === 0) {
-            throw new Error('msg file is upload');
-        }
+  uploadFile: async (file) => {
+    await instance('files').insert({ 'title': file.originalname, 'expansion': file.encoding, 'MIME_TYPE': file.mimetype, 'size': file.size });
+    return { 'msg': 'file is upload' };
+  },
+  deletedFile: async (id) => {
+    const file = await instance('files').select('id').where('id', id);
+    if (file.length === 0) {
+      throw new Error('msg file is upload');
+    }
 
-        await instance('files').delete().where('id', id);
-        return { 'msg': 'file is deleted' };
-    },
-    fileInfo: async (id) => {
-        const file = await instance('files').select('id').where('id', id);
-        if (file.length === 0) {
-            throw new Error('msg file is upload');
-        }
-        return await instance('files').select('*').where('id', id);
-    },
-    updateFile: async (id, file) => {
-        await instance('files').where('id',id).update({ 'title': file.originalname, 'expansion': file.encoding, 'MIME_TYPE': file.mimetype, 'size': file.size });
-        return { 'msg': 'file is updated' };
-    },
+    await instance('files').delete().where('id', id);
+    return { 'msg': 'file is deleted' };
+  },
+  fileInfo: async (id) => {
+    const file = await instance('files').select('id').where('id', id);
+    if (file.length === 0) {
+      throw new Error('msg file is upload');
+    }
+    return await instance('files').select('*').where('id', id);
+  },
+  updateFile: async (id, file) => {
+    await instance('files').where('id',id).update({ 'title': file.originalname, 'expansion': file.encoding, 'MIME_TYPE': file.mimetype, 'size': file.size });
+    return { 'msg': 'file is updated' };
+  },
     
 };
 
